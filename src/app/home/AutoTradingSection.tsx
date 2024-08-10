@@ -1,10 +1,8 @@
 import Image from "next/image";
 
-import hero1 from '../../accents/images/hero1.png'
 import { Card, CardDiv } from "@/components/card";
-import { ClockIcon } from "@/components/svgs";
 import { SectionDiv } from "@/components/section";
-import { data } from "@/accents/content/content";
+import { homeData } from "@/accents/content/home";
 
 export default function AutoTradingSection() {
     return (
@@ -25,7 +23,7 @@ export default function AutoTradingSection() {
                     `}
                 >
                     <Image
-                        src={data.home.section1.img}
+                        src={homeData.autoTrad.img}
                         alt="hero1"
                     />
                     <div
@@ -40,7 +38,7 @@ export default function AutoTradingSection() {
                             `}
                         >
                             {
-                                data.home.section1.cards.g1.map((val) => (
+                                homeData.autoTrad.cards.g1.map((val) => (
                                     <Card className="bg-[--bg-color] p-5 max-w-[280px] w-full h-[200px] shadow-card-s">
                                         <CardDiv>
                                             {val.svg}
@@ -62,7 +60,7 @@ export default function AutoTradingSection() {
                             `}
                         >
                             {
-                                data.home.section1.cards.g2.map((val) => (
+                                homeData.autoTrad.cards.g2.map((val) => (
                                     <Card className="bg-[--bg-color] p-5 max-w-[280px] w-full h-[200px] shadow-card-s">
                                         <CardDiv>
                                             {val.svg}

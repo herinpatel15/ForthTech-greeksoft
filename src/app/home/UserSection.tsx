@@ -1,12 +1,11 @@
 'use client'
-import { data } from "@/accents/content/content";
+import { homeData } from "@/accents/content/home";
 import { Button } from "@/components/button";
 import Image from "next/image";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import React,{ useRef } from "react";
-import reviweImg from "@/accents/images/14.png";
 
 export default function UserSection() {
     let sliderRef = useRef<Slider | null>(null);
@@ -42,7 +41,7 @@ export default function UserSection() {
         <section className="bg-[--primary-color] py-10 flex flex-col gap-5">
             <div>
                 <Slider ref={sliderRef} {...settings}>
-                    {data.home.section6.users.map((val, index) => (
+                    {homeData.usersSec.users.map((val, index) => (
                         <div key={index} className="w-full p-5">
                             <Image src={val} alt="loading" />
                         </div>
@@ -51,9 +50,9 @@ export default function UserSection() {
             </div>
 
             <div className="flex gap-5 flex-col items-center justify-center">
-                <h1 className="text-4xl text-[--bg-color] text-center">{data.home.section6.title}</h1>
+                <h1 className="text-4xl text-[--bg-color] text-center">{homeData.usersSec.title}</h1>
                 <Button
-                    label={data.home.section6.btn}
+                    label={homeData.usersSec.btn}
                     variant="outline"
                     className="hover:bg-[#00000019] text-[--bg-color]"
                 />

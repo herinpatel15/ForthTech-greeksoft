@@ -2,15 +2,15 @@ import { Button } from "@/components/button";
 import { Card, CardDiv } from "@/components/card";
 import { SectionDiv } from "@/components/section";
 
-import { data } from "@/accents/content/content"
+import { homeData } from "@/accents/content/home"
 
 export default function HeroSection() {
     return (
         <section>
             <SectionDiv className="p-10 gap-5">
-                <h1 className="text-4xl font-bold text-center mt-10">{data.home.hero.tagLine[0]}</h1>
-                <p className="text-center text-lg">{data.home.hero.pera}</p>
-                <Button label={data.home.hero.btn} className="mx-auto my-5" />
+                <h1 className="text-4xl font-bold text-center mt-10">{homeData.hero.tagLine[0]}</h1>
+                <p className="text-center text-lg">{homeData.hero.pera}</p>
+                <Button label={homeData.hero.btn} className="mx-auto my-5" />
                 <div
                     className={`
                         my-5 p-5 rounded-xl
@@ -21,7 +21,7 @@ export default function HeroSection() {
                     `}
                 >
                     {
-                        data.home.hero.cards.map((val) => (
+                        homeData.hero.cards.map((val) => (
                             <Card className="items-center justify-center">
                                 <CardDiv>{val.svg}</CardDiv>
                                 <CardDiv>

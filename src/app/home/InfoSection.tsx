@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 import { SectionDiv } from "@/components/section";
-import { data } from "@/accents/content/content";
+import { homeData } from "@/accents/content/home";
 
 export default function InfoSection() {
     return (
@@ -14,21 +14,21 @@ export default function InfoSection() {
                     `}
                 >
                     <Image
-                        src={data.home.section2.g1.img}
+                        src={homeData.staticData.g1.img}
                         alt="co-location Caas"
                         className="lg:w-[40%] sm:w-[75%] w-[90%]"
                     />
                     <div className="flex flex-col gap-8 justify-center">
                         <h1 className="text-4xl font-semibold">
-                            {data.home.section2.g1.title}
+                            {homeData.staticData.g1.title}
                         </h1>
                         <ul className="list-disc ml-5 text-[--text-var-color]">
-                            {data.home.section2.g1.list.map((val, index) => (
+                            {homeData.staticData.g1.list.map((val, index) => (
                                 <li key={index}>{val}</li>
                             ))}
                         </ul>
                         <article className="text-lg">
-                            {data.home.section2.g1.detail}
+                            {homeData.staticData.g1.detail}
                         </article>
                     </div>
                 </div>
@@ -41,7 +41,7 @@ export default function InfoSection() {
                 >
                     <div className="flex flex-col gap-8 justify-center">
                         {
-                            data.home.section2.g2.main.map((val) => (
+                            homeData.staticData.g2.main.map((val) => (
                                 <div>
                                     <h1 className="text-4xl font-semibold">
                                         {val.title}
@@ -57,7 +57,7 @@ export default function InfoSection() {
                     </div>
 
                     <Image
-                        src={data.home.section2.g2.img}
+                        src={homeData.staticData.g2.img}
                         alt="co-location Caas"
                         className="lg:w-[50%] sm:w-[75%] w-[90%]"
                     />

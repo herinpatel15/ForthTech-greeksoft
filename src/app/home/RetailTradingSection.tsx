@@ -4,7 +4,7 @@ import Image from "next/image";
 
 import retailTrading from '../../accents/images/mobile_app_gif.gif'
 import { SectionDiv } from "@/components/section";
-import { data } from "@/accents/content/content";
+import { homeData } from "@/accents/content/home";
 
 export default function RetailTrading() {
     return (
@@ -13,10 +13,10 @@ export default function RetailTrading() {
         >
             <SectionDiv className={`p-5 py-10 justify-center items-center`}>
                 <h1 className="text-3xl font-semibold text-center">
-                    {data.home.section3.title}
+                    {homeData.retailTrad.title}
                 </h1>
                 <p className="text-center text-[--text-var-color] mt-5">
-                    {data.home.section3.detail}
+                    {homeData.retailTrad.detail}
                 </p>
                 <div
                     className={`
@@ -27,7 +27,7 @@ export default function RetailTrading() {
                     `}
                 >
                     <Image
-                        src={data.home.section3.img}
+                        src={homeData.retailTrad.img}
                         alt="hero1"
                     />
                     <div
@@ -43,7 +43,7 @@ export default function RetailTrading() {
                             `}
                         >
                             {
-                                data.home.section3.cards.g1.map((val) => (
+                                homeData.retailTrad.cards.g1.map((val) => (
                                     <Card className=" p-5 max-w-[280px] w-full h-full items-center justify-center">
                                         <CardDiv>
                                             {val.svg}
@@ -65,7 +65,7 @@ export default function RetailTrading() {
                             `}
                         >
                             {
-                                data.home.section3.cards.g2.map((val) => (
+                                homeData.retailTrad.cards.g2.map((val) => (
                                     <Card className=" p-5 max-w-[280px] w-full h-full items-center justify-center">
                                         <CardDiv>
                                             {val.svg}

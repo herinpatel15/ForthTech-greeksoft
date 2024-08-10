@@ -1,5 +1,5 @@
 'use client'
-import { data } from "@/accents/content/content";
+import { homeData } from "@/accents/content/home";
 import { SectionDiv } from "@/components/section";
 import Image from "next/image";
 import React, { useRef } from "react";
@@ -37,14 +37,14 @@ export default function ClientSaySection() {
         <section>
             <SectionDiv className="py-10">
                 <h1 className="text-3xl font-semibold text-center text-[--highlite-color]">
-                    {data.home.section5.title}
+                    {homeData.clientSay.title}
                 </h1>
                 <p className="text-center text-[--text-var-color] mt-5">
-                    {data.home.section5.detail}
+                    {homeData.clientSay.detail}
                 </p>
                 <Slider ref={sliderRef} {...settings}>
                     {
-                        data.home.section5.cards.map((val) => (
+                        homeData.clientSay.cards.map((val) => (
                             <div className="w-full flex items-center justify-center sm:p-10 p-5">
                                 <Card className=" shadow-card-s py-10 px-10 min-w-full">
                                     <CardDiv>
