@@ -1,6 +1,5 @@
 'use client'
 
-import Image from 'next/image'
 import {Navbar, NavLogo, NavList, NavListDataType } from './element/MainNav'
 import { useCallback, useState } from 'react'
 import { CrossIcon, MenuIcon } from '../svgs'
@@ -11,11 +10,11 @@ export default function Nav() {
 
     const navlist: NavListDataType[] = [
         {name: 'Home', path: '/'},
-        {name: 'About US', path: '/pages/about'},
-        {name: 'Products', path: '/pages/product'},
-        {name: 'Caas', path: '/pages/caas'},
-        {name: 'Career', path: '/pages/career'},
-        {name: 'Contact Us', path: '/pages/contact'},
+        {name: 'About US', path: '/about'},
+        {name: 'Products', path: '/product'},
+        {name: 'Caas', path: '/caas'},
+        {name: 'Career', path: '/career'},
+        {name: 'Contact Us', path: '/contact'},
     ]
 
     const handaleToggale = useCallback(() => {

@@ -32,7 +32,7 @@ const CardDiv = forwardRef<
             className={
                 oc(
                     `flex flex-col justify-center items-center`,
-                    className
+                    `${className}`
                 )
             } 
             {...props} 
