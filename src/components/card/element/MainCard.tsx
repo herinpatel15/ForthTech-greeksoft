@@ -1,3 +1,4 @@
+import { oc } from "@/lib/classesManage";
 import { forwardRef, HTMLAttributes } from "react";
 
 interface CardType extends HTMLAttributes<HTMLDivElement> {}
@@ -7,10 +8,12 @@ const Card = forwardRef<
 >(({className, ...props}, ref) => {
     return (
         <div 
-            className={`
-                flex flex-col items-center justify-center gap-5 h-full max-w-xs p-3 rounded-xl
-                ${className}
-            `} 
+            className={
+                oc(
+                    `flex flex-col gap-5 h-full max-w-xs p-3 rounded-xl`,
+                    className
+                )
+            } 
             {...props} 
             ref={ref} 
         />
@@ -26,10 +29,12 @@ const CardDiv = forwardRef<
 >(({className, ...props}, ref) => {
     return (
         <div 
-            className={`
-                flex items-center justify-center flex-col w-[100%]
-                ${className}
-            `} 
+            className={
+                oc(
+                    `flex flex-col justify-center items-center`,
+                    className
+                )
+            } 
             {...props} 
             ref={ref} 
         />

@@ -27,7 +27,7 @@ export default function Nav() {
     }, [setToggale, toggale])
 
     return (
-        <nav>
+        <nav className='sticky top-0 shadow-card-s bg-[--bg-color] z-50'>
             <Navbar className='max-w-screen-xl md:w-screen-xl mx-auto'>
                 <NavLogo>
                     <h1>hello</h1>
