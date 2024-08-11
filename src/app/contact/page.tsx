@@ -1,7 +1,13 @@
+import Hero from './components/Hero'
+import LocationCards from './components/LocationCards'
+import MainLocation from './components/MainLocation'
+
 export default function Contact() {
     return (
-        <main>
-            <h1>contact</h1>
+        <main className="overflow-x-hidden">
+            <Hero />
+            <LocationCards />
+            <MainLocation />
         </main>
     )
 }
