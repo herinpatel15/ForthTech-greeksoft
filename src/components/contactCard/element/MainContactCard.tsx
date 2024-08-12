@@ -3,28 +3,18 @@ import Image from "next/image"
 import bgImg from '@/accents/images/ahmdabad_.png'
 import { Mubai } from "@/components/svgs"
 import { useCallback, useRef } from "react"
-import GoogleMapReact from 'google-map-react';
+import { Map } from "@/components/map"
+import { OfficeInfo } from '@/accents/content/contact'
 
-interface AnyReactComponentProps {
-    lat: number;
-    lng: number;
-    text: string;
-}
 
-const AnyReactComponent: React.FC<AnyReactComponentProps> = ({ text }) => {
-    return (
-        <div style={{
-            color: 'white',
-            background: 'red',
-            padding: '5px',
-            borderRadius: '3px',
-            textAlign: 'center'
-        }}>
-            {text}
-        </div>
-    );
-};
-const ContactCard = () => {
+const ContactCard = ({ data, center, zoom }: {
+    data: OfficeInfo, 
+    center: {
+        "lat": number,
+        "lng": number,
+    },
+    zoom: number
+}) => {
 
     const cardRef = useRef<HTMLDivElement | null>(null)
     const imgRef = useRef<HTMLImageElement | null>(null)
@@ -55,51 +45,38 @@ const ContactCard = () => {
                 z-10 absolute top-0 left-0 rounded-xl h-full flex flex-col w-full
             `}>
                 <Image
-                    src={bgImg}
+                    src={data.img}
                     alt="Ahmedabad Background"
                     className="rounded-t-xl"
                     ref={imgRef}
                     style={{ display: 'block' }}
                 />
                 <div ref={mapRef} style={{ display: "none" }} className=" w-full h-[70%] rounded-t-xl">
-                    <GoogleMapReact
-                        bootstrapURLKeys={{ key: "" }}
-                        defaultCenter={{
-                            lat: 20.7885723,
-                            lng: 72.9814874
-                        }}
-                        defaultZoom={13}
-                    >
-                        <AnyReactComponent
-                            lat={59.955413}
-                            lng={30.337844}
-                            text="My Marker"
-                        />
-                    </GoogleMapReact>
+                    <Map center={center} zoom={zoom} />
                 </div>
             </div>
             <div className={`
                 z-20 p-5 absolute w-full bottom-0 flex flex-col gap-3 items-center justify-center
             `}>
                 <div className="bg-white rounded-full">
-                    <Mubai theme="#F87B20" />
+                    {data.svg}
                 </div>
                 <div>
-                    <h2 className="text-2xl font-semibold text-center">Ahmedabad</h2>
-                    <p className="text-[--text-var-color] text-center">Head Office</p>
+                    <h2 className="text-2xl font-semibold text-center">{data.city}</h2>
+                    <p className="text-[--text-var-color] text-center">{data.detail}</p>
                 </div>
                 <div ref={detailRef} style={{ display: "flex" }} className="flex flex-col gap-3 text-lg ">
-                    <p className="text-[--text-var-color] text-center">
+                    <p className="text-[--text-var-color] text-center cxs:text-base text-sm">
                         <span>Contact No: </span>
-                        <span className="ml-3 text-[--highlite-color]">+91 22 4042 1000</span>
+                        <span className="ml-3 text-[--highlite-color]">{data.contact1}</span>
                     </p>
-                    <p className="text-[--text-var-color] text-center">
+                    <p className="text-[--text-var-color] text-center cxs:text-base text-sm">
                         <span>Contact No: </span>
-                        <span className="ml-3 text-[--highlite-color]">+91 22 4042 1000</span>
+                        <span className="ml-3 text-[--highlite-color]">{data.contact2}</span>
                     </p>
-                    <p className="text-[--text-var-color] text-center">
+                    <p className="text-[--text-var-color] text-center cxs:text-base text-sm">
                         <span>E-mail: </span>
-                        <span className="ml-3 text-[--highlite-color]">demo@greeksoft.in</span>
+                        <span className="ml-3 text-[--highlite-color]">{data.email}</span>
                     </p>
                 </div>
             </div>
